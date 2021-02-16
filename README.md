@@ -55,6 +55,7 @@ This shows a sample dashboard created in Kibana based on the indexed documents:
   - [Custom certificates](#custom-certificates)
   - [Secure API-Builder Traffic-Monitor API](#secure-api-builder-traffic-monitor-api)
   - [Lifecycle Management](#lifecycle-management)
+  - [Count Transactions](#count-transactions)
 - [Infrastructure sizing](#size-your-infrastructure)
 - [Updates](#updates)
 - [Troubleshooting](#troubleshooting)
@@ -769,6 +770,18 @@ Please note:
 :point_right: It's optional to use different hardware per stage  
 :point_right: Do not change the ILM/Modify the ILM-Policies manually, as they are configured automatically. In a later version, the solution will provide options to customize the time range as needed without breaking updates.  
 :point_right: To support long term analytics (e.g. 5 years) it's planned to use Elasticsearch [Rollup-Jobs](https://www.elastic.co/guide/en/kibana/current/data-rollups.html) in a future release of this solution  
+
+<p align="right"><a href="#table-of-content">Top</a></p>
+
+
+## Count Transactions
+
+By default, the solution only counts requests that are identified by a unique correlation ID.
+However, if you use API gateways with multiple layers or individual requests belong to a transaction, you can also add a transactionId.
+
+For example, use the policy provided here: https://github.com/Axway-API-Management-Plus/transaction-policy
+
+This enables the solution to combine individual requests into one transaction that can be displayed in corresponding dashboards.
 
 <p align="right"><a href="#table-of-content">Top</a></p>
 

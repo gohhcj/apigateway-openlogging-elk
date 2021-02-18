@@ -21,8 +21,7 @@
                 "type" : "date"
             },
             "correlationId": {
-                "type": "keyword",
-                "doc_values": false
+                "type": "keyword"
             },
             "transactionId": {
                 "type": "keyword"
